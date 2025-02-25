@@ -63,10 +63,10 @@ public class Main {
                             if (vuela.vuelos.contains(vuela.buscarVuelos(numero))) {
                                 vuela.vuelos.remove(vuela.buscarVuelos(numero));
                                 System.out.println("El vuelo "+numero+" fue borrado correctamente");
-                                System.out.println();
+
                             }else {
                                 System.out.println("El Número no pertenece a ningún vuelo");
-                                System.out.println();
+
                             }
                         }
                         System.out.println();
