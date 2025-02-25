@@ -121,7 +121,7 @@ public class Vuelos {
             dia = scanner.nextLine();
         } while (!validarDia(dia));
         System.out.println("Fecha válida.");
-        
+
         return dia;
     }
 
@@ -237,7 +237,7 @@ public class Vuelos {
                 System.out.println("La clase ingresada no está en la lista de vuelos");
             }
         }else {
-            System.out.println("La clave no existe");
+            System.out.println("La clave no existe( Numero || Origen || Destino || Dia || Clase");
         }
     }
 }
