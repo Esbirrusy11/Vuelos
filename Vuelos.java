@@ -64,19 +64,91 @@ public class Vuelos {
         Scanner sc = new Scanner(System.in);
         gestionVuelos();
 
-        System.out.println("¿Cuál es el número del vuelo?");
-        String numero = sc.nextLine();
+        String numero = validarnumero();
         System.out.println("¿Cuál es el origen del vuelo?");
         String origen = sc.nextLine();
         System.out.println("¿Cuál es el destino del vuelo?");
         String destino = sc.nextLine();
-        System.out.println("¿Qué día sale el vuelo?");
-        String dia = sc.nextLine();
+        String dia = validDia();
         System.out.println("¿Qué clase es el vuelo?");
         String clase = sc.nextLine();
 
         vuelos.add(new Vuelos(numero, origen, destino, dia, clase));
         System.out.println("El vuelo fue añadido con éxito");
+    }
+
+        public static String validarnumero() {
+            Scanner scanner = new Scanner(System.in);
+            String num;
+
+            do {
+                System.out.print("Introduce una fecha en formato YYYY-MM: ");
+                num = scanner.nextLine();
+            } while (!validarFormatoFecha(num));
+
+            System.out.println("Fecha válida.");
+            return num;
+        }
+
+
+        public static boolean validarFormatoFecha(String num) {
+
+            if (num.length() != 7) {
+                return false;
+            }
+
+            if (num.charAt(4) != '-') {
+                return false;
+            }
+
+
+            int mes = Integer.parseInt(num.substring(5, 7));
+
+
+            if (mes < 1 || mes > 12) {
+                return false;
+            }
+
+            return true;
+        }
+
+    public static String validDia() {
+        Scanner scanner = new Scanner(System.in);
+        String dia;
+
+        do {
+            System.out.print("Introduce un día en formato DD-MM: ");
+            dia = scanner.nextLine();
+        } while (!validarDia(dia));
+        System.out.println("Fecha válida.");
+        
+        return dia;
+    }
+
+    public static boolean validarDia(String dia) {
+
+        if (dia.length() != 5 || dia.charAt(2) != '-') {
+            return false;
+        }
+
+        try {
+
+            int dias = Integer.parseInt(dia.substring(0, 2));
+            int mes = Integer.parseInt(dia.substring(3, 5));
+
+            if (mes < 1 || mes > 12) {
+                return false;
+            }
+
+            if (dias < 1 || dias > 31) {
+                return false;
+            }
+
+            return true;
+
+        } catch (NumberFormatException e) {
+            return false;
+        }
     }
 
     public void printVuelos(){
