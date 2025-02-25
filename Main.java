@@ -19,7 +19,9 @@ public class Main {
                         menu=false;
                         break;
                     case 1:
-                       vuela.printVuelos();
+                        vuela.printVuelos();
+                        System.out.println();
+                        ImprimirMenu();
                         break;
                     case 2:
 
@@ -37,14 +39,20 @@ public class Main {
 
                             }
                         }
+                        System.out.println();
+                        ImprimirMenu();
                         break;
                     case 3:
                         System.out.println("Clave:");
                         String clave= sc.next();
                         vuela.BuscarVuelosClave(clave);
+                        System.out.println();
+                        ImprimirMenu();
                         break;
                     case 4:
                         vuela.nuevoVuelo();
+                        System.out.println();
+                        ImprimirMenu();
                         break;
                     case 5:
                         if (vuela.vuelos.isEmpty()){
@@ -61,6 +69,8 @@ public class Main {
                                 System.out.println();
                             }
                         }
+                        System.out.println();
+                        ImprimirMenu();
                         break;
 
                     default:
@@ -87,5 +97,4 @@ public class Main {
         System.out.println("5 - Borrar vuelo por número");
         System.out.println("0 - SALIR");
     }
-    }
-
+}
