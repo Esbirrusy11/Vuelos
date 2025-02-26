@@ -77,7 +77,7 @@ public class Vuelos {
         System.out.println("El vuelo fue añadido con éxito");
     }
 
-    public static String validarnumero() {
+    public String validarnumero() {
         Scanner scanner = new Scanner(System.in);
         String num;
 
@@ -91,7 +91,7 @@ public class Vuelos {
     }
 
 
-    public static boolean validarFormatoFecha(String num) {
+    public boolean validarFormatoFecha(String num) {
 
         if (num.length() != 7) {
             return false;
@@ -116,7 +116,7 @@ public class Vuelos {
 
     }
 
-    public static String validDia() {
+    public  String validDia() {
         Scanner scanner = new Scanner(System.in);
         String dia;
 
@@ -129,7 +129,7 @@ public class Vuelos {
         return dia;
     }
 
-    public static boolean validarDia(String dia) {
+    public boolean validarDia(String dia) {
 
         if (dia.length() != 5 || dia.charAt(2) != '-') {
             return false;
