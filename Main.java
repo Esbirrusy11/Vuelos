@@ -35,7 +35,6 @@ public class Main {
                                 System.out.println();
                             }else {
                                 System.out.println("El vuelo no existe en la lista");
-                                break;
 
                             }
                         }
