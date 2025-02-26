@@ -77,31 +77,31 @@ public class Vuelos {
         System.out.println("El vuelo fue añadido con éxito");
     }
 
-        public static String validarnumero() {
-            Scanner scanner = new Scanner(System.in);
-            String num;
+    public static String validarnumero() {
+        Scanner scanner = new Scanner(System.in);
+        String num;
 
-            do {
-                System.out.print("Introduce una fecha en formato YYYY-MM: ");
-                num = scanner.nextLine();
-            } while (!validarFormatoFecha(num));
+        do {
+            System.out.print("Introduce una fecha en formato YYYY-MM: ");
+            num = scanner.nextLine();
+        } while (!validarFormatoFecha(num));
 
-            System.out.println("Fecha válida.");
-            return num;
+        System.out.println("Fecha válida.");
+        return num;
+    }
+
+
+    public static boolean validarFormatoFecha(String num) {
+
+        if (num.length() != 7) {
+            return false;
         }
 
-
-        public static boolean validarFormatoFecha(String num) {
-
-            if (num.length() != 7) {
-                return false;
-            }
-
-            if (num.charAt(4) != '-') {
-                return false;
-            }
-
-
+        if (num.charAt(4) != '-') {
+            return false;
+        }
+            try {
+            int anyo =Integer.parseInt(num.substring(0,4))    ;
             int mes = Integer.parseInt(num.substring(5, 7));
 
 
@@ -110,7 +110,11 @@ public class Vuelos {
             }
 
             return true;
+        }catch (NumberFormatException e){
+            return false;
         }
+
+    }
 
     public static String validDia() {
         Scanner scanner = new Scanner(System.in);
